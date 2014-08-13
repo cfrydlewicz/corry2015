@@ -1,0 +1,48 @@
+/* SCSS Variables */
+$black: #000;
+$white: #fff;
+$break1: 768px;
+$break2: 920px;
+$break3: 1060px;
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.total-wrapper {
+  min-width: 480px;
+  max-width: 100%;
+}
+
+header {
+  width: 100%;
+  .header-logo a {
+    display: block;
+    width: 250px;
+    height: 61px;
+    background-position: 0px 0px;
+    text-indent: -999999em;
+    background-image: url('images/logo-header.png');
+  }
+}
+
+
+@media only screen and (min-width: $break1){
+  header {
+    position: fixed;
+  }
+}
+
+
+
+@media only screen and (min-width: $break2){}
+
+
+
+@media only screen and (min-width: $break3){}
+
+

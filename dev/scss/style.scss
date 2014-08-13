@@ -1,0 +1,132 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+  background-repeat: no-repeat;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+	background: white;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+/* -- Formatting Shortcuts -- */
+.clear {clear: both;}
+.margin0 {margin: 0px;}
+.top0 {margin-top: 0px;}
+.bot0 {margin-bottom: 0px;}
+.bold {font-weight: bold;}
+.allcaps {text-transform: uppercase;}
+.capitalize {text-transform: capitalize;}
+.lowercase {text-transform: lowercase;}
+.hidden {display: none;}
+/* SCSS Variables */
+$black: #000;
+$white: #fff;
+$break1: 768px;
+$break2: 920px;
+$break3: 1060px;
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.total-wrapper {
+  min-width: 480px;
+  max-width: 100%;
+}
+
+header {
+  width: 100%;
+  .header-logo a {
+    display: block;
+    width: 250px;
+    height: 61px;
+    background-position: 0px 0px;
+    text-indent: -999999em;
+    background-image: url('images/logo-header.png');
+  }
+}
+
+
+@media only screen and (min-width: $break1){
+  header {
+    position: fixed;
+  }
+}
+
+
+
+@media only screen and (min-width: $break2){}
+
+
+
+@media only screen and (min-width: $break3){}
+
+
+
+/* --- Sub-Theme Customization --- */
+
+/* SCSS Variables */
+$black: #000;
+$white: #fff;
+$break1: 768px;
+$break2: 920px;
+$break3: 1060px;
+
+
+
+
+
+@media only screen and (min-width: $break1){}
+
+
+
+@media only screen and (min-width: $break2){}
+
+
+
+@media only screen and (min-width: $break3){}
+
+
+
+@media only print {}

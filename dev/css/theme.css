@@ -1,0 +1,37 @@
+/* SCSS Variables */
+/* line 8, ../scss/theme.scss */
+body {
+  font-family: sans-serif;
+}
+
+/* line 12, ../scss/theme.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 16, ../scss/theme.scss */
+.total-wrapper {
+  min-width: 480px;
+  max-width: 100%;
+}
+
+/* line 21, ../scss/theme.scss */
+header {
+  width: 100%;
+}
+/* line 23, ../scss/theme.scss */
+header .header-logo a {
+  display: block;
+  width: 250px;
+  height: 61px;
+  background-position: 0px 0px;
+  text-indent: -999999em;
+  background-image: url("images/logo-header.png");
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 35, ../scss/theme.scss */
+  header {
+    position: fixed;
+  }
+}

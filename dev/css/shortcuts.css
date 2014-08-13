@@ -1,1 +1,45 @@
-.left{float:left}.right{float:right}.clear{clear:both}div.clear{height:0px;font-size:0px}div.clear.p0{height:0px}div.clear.p1{height:1px}div.clear.p2{height:2px}div.clear.p3{height:3px}div.clear.p4{height:4px}div.clear.p5{height:5px}div.clear.p6{height:6px}div.clear.p7{height:7px}div.clear.p8{height:8px}div.clear.p9{height:9px}div.clear.p10{height:10px}div.clear.p11{height:11px}div.clear.p12{height:12px}div.clear.p13{height:13px}div.clear.p14{height:14px}div.clear.p15{height:15px}div.clear.p16{height:16px}div.clear.p18{height:18px}div.clear.p20{height:20px}div.clear.p22{height:22px}div.clear.p24{height:24px}div.clear.p25{height:25px}div.clear.p26{height:26px}div.clear.p28{height:28px}div.clear.p30{height:30px}div.clear.p32{height:32px}div.clear.p34{height:34px}div.clear.p35{height:35px}div.clear.p36{height:36px}div.clear.p38{height:38px}div.clear.p40{height:40px}div.clear.p42{height:42px}div.clear.p44{height:44px}div.clear.p46{height:46px}div.clear.p48{height:48px}div.clear.p50{height:50px}.top0,.notop{margin-top:0px}.bot0,.nobot{margin-bottom:0px}.bold{font-weight:bold}.center{text-align:center}.allcaps{text-transform:uppercase}.capitalize{text-transform:capitalize}.lowercase{text-transform:lowercase}.hidden{display:none}.nomargin{margin:0px}
+/* -- Formatting Shortcuts -- */
+/* line 2, ../scss/shortcuts.scss */
+.clear {
+  clear: both;
+}
+
+/* line 3, ../scss/shortcuts.scss */
+.margin0 {
+  margin: 0px;
+}
+
+/* line 4, ../scss/shortcuts.scss */
+.top0 {
+  margin-top: 0px;
+}
+
+/* line 5, ../scss/shortcuts.scss */
+.bot0 {
+  margin-bottom: 0px;
+}
+
+/* line 6, ../scss/shortcuts.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 7, ../scss/shortcuts.scss */
+.allcaps {
+  text-transform: uppercase;
+}
+
+/* line 8, ../scss/shortcuts.scss */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* line 9, ../scss/shortcuts.scss */
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* line 10, ../scss/shortcuts.scss */
+.hidden {
+  display: none;
+}

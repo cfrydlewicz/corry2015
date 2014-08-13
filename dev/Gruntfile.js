@@ -9,13 +9,11 @@ module.exports = function(grunt) {
   			src: [
 					'scss/reset.scss',
 					'scss/shortcuts.scss',
-					'scss/mobile.scss',
-					'scss/tablet.scss',
-					'scss/wide.scss',
+					'scss/theme.scss',
 					'scss/subthemes.scss',
 					'scss/print.scss'
 				],
-				dest: 'scss/corry2015.concat.scss'
+				dest: 'scss/style.scss'
 			},
 			js : {
 				src : [
@@ -29,10 +27,9 @@ module.exports = function(grunt) {
     compass: {
       dist: {
         options: {
+          config: '../config.rb',
           sassDir: 'scss',
-          cssDir: 'css',
-          environment: 'production',
-          outputStyle: 'compressed'
+          cssDir: 'css'
         }
       }
     },
@@ -44,8 +41,15 @@ module.exports = function(grunt) {
       },
       my_target: {
         files: {
-          'scripts.js': ['js/corry2015.concat.js']
+          '../scripts.js': ['js/corry2015.concat.js']
         }
+      }
+    },
+    
+    cssmin: {
+      minify: {
+        src: 'css/style.css',
+        dest: '../style.css'
       }
     },
 
@@ -65,9 +69,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'concat', 'uglify', 'compass' ] );
+	grunt.registerTask( 'default', [ 'concat', 'uglify', 'compass', 'cssmin' ] );
 
 };

@@ -1,0 +1,148 @@
+/* line 8, ../scss/style.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  background-repeat: no-repeat;
+}
+
+/* remember to define focus styles! */
+/* line 21, ../scss/style.scss */
+:focus {
+  outline: 0;
+}
+
+/* line 24, ../scss/style.scss */
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+/* line 29, ../scss/style.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+/* line 33, ../scss/style.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* line 37, ../scss/style.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+/* line 42, ../scss/style.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+/* line 45, ../scss/style.scss */
+blockquote, q {
+  quotes: "" "";
+}
+
+/* -- Formatting Shortcuts -- */
+/* line 49, ../scss/style.scss */
+.clear {
+  clear: both;
+}
+
+/* line 50, ../scss/style.scss */
+.margin0 {
+  margin: 0px;
+}
+
+/* line 51, ../scss/style.scss */
+.top0 {
+  margin-top: 0px;
+}
+
+/* line 52, ../scss/style.scss */
+.bot0 {
+  margin-bottom: 0px;
+}
+
+/* line 53, ../scss/style.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 54, ../scss/style.scss */
+.allcaps {
+  text-transform: uppercase;
+}
+
+/* line 55, ../scss/style.scss */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* line 56, ../scss/style.scss */
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* line 57, ../scss/style.scss */
+.hidden {
+  display: none;
+}
+
+/* SCSS Variables */
+/* line 65, ../scss/style.scss */
+body {
+  font-family: sans-serif;
+}
+
+/* line 69, ../scss/style.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 73, ../scss/style.scss */
+.total-wrapper {
+  min-width: 480px;
+  max-width: 100%;
+}
+
+/* line 78, ../scss/style.scss */
+header {
+  width: 100%;
+}
+/* line 80, ../scss/style.scss */
+header .header-logo a {
+  display: block;
+  width: 250px;
+  height: 61px;
+  background-position: 0px 0px;
+  text-indent: -999999em;
+  background-image: url("images/logo-header.png");
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 92, ../scss/style.scss */
+  header {
+    position: fixed;
+  }
+}
+/* --- Sub-Theme Customization --- */
+/* SCSS Variables */
