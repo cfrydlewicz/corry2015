@@ -7,50 +7,54 @@ module.exports = function(grunt) {
 		concat: {
 			css: {
   			src: [
-					'css/reset.scss',
-					'css/shortcuts.scss',
-					'css/mobile.scss',
-					'css/tablet.scss',
-					'css/wide.scss',
-					'css/subthemes.scss'
+					'scss/reset.scss',
+					'scss/shortcuts.scss',
+					'scss/mobile.scss',
+					'scss/tablet.scss',
+					'scss/wide.scss',
+					'scss/subthemes.scss',
+					'scss/print.scss'
 				],
-				dest: 'corryart2015.concat.scss'
+				dest: 'scss/corry2015.concat.scss'
 			},
 			js : {
 				src : [
 					'js/jquery-2.1.1.min.js',
           'js/custom.js'
 				],
-				dest : 'corryart2015.concat.js'
+				dest : 'js/corry2015.concat.js'
 			}
 		},
 
     compass: {
       dist: {
         options: {
-          sassDir: 'css',
-          cssDir: '',
+          sassDir: 'scss',
+          cssDir: 'css',
           environment: 'production',
           outputStyle: 'compressed'
         }
       }
     },
 
-		uglify: {
-			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-			},
-			build: {
-				src: ['corryart2015.concat.js'],
-				dest: '../scripts.js'
-			}
-		},
-		
+    uglify: {
+      options: {
+        mangle: false,
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      my_target: {
+        files: {
+          'scripts.js': ['js/corry2015.concat.js']
+        }
+      }
+    },
+
 		watch: {
 			files: [
-        'dev/Gruntfile.js',
-        'dev/css/*.css',
-        'dev/js/*.js'
+        'Gruntfile.js',
+        'package.json',
+        'scss/*.scss',
+        'js/*.js'
       ],
       tasks: ['default']
     }
