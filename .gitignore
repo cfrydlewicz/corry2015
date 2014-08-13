@@ -37,4 +37,5 @@ Icon
 .Trashes
 
 # Pre-Processors
+.sass-cache/
 dev/.sass-cache/
