@@ -1,0 +1,13 @@
+{
+  "name": "corry2015",
+  "description": "Theme for corryfrydlewicz.com built for 2015",
+  "version": "0.9.9",
+  "repository": "https://github.com/cfrydlewicz/corry2015.git",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-compass": "~0.4.0",
+    "grunt-contrib-concat": "~0.7.3",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}
