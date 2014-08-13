@@ -108,27 +108,55 @@ blockquote, q {
 }
 
 /* SCSS Variables */
-/* line 65, ../scss/style.scss */
+@-ms-viewport {
+  width: device-width;
+}
+
+/* line 69, ../scss/style.scss */
 body {
   font-family: sans-serif;
 }
 
-/* line 69, ../scss/style.scss */
+/* line 73, ../scss/style.scss */
 a {
   text-decoration: none;
 }
 
-/* line 73, ../scss/style.scss */
+/* line 77, ../scss/style.scss */
 .total-wrapper {
   min-width: 480px;
   max-width: 100%;
 }
+/* line 80, ../scss/style.scss */
+.total-wrapper img {
+  max-width: 100%;
+  height: auto;
+}
 
-/* line 78, ../scss/style.scss */
-header {
+/* line 86, ../scss/style.scss */
+.container {
+  float: left;
+  clear: both;
   width: 100%;
 }
-/* line 80, ../scss/style.scss */
+/* line 90, ../scss/style.scss */
+.container .inner {
+  width: 90%;
+  margin: 0px auto;
+}
+
+/* line 96, ../scss/style.scss */
+header {
+  padding: 1.5rem 0px .75rem 0px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+/* line 100, ../scss/style.scss */
+header .header-logo {
+  float: left;
+  clear: left;
+}
+/* line 103, ../scss/style.scss */
 header .header-logo a {
   display: block;
   width: 250px;
@@ -136,12 +164,60 @@ header .header-logo a {
   background-position: 0px 0px;
   text-indent: -999999em;
   background-image: url("images/logo-header.png");
+  background-size: auto 100%;
+}
+
+/* line 115, ../scss/style.scss */
+article {
+  padding: 2rem 0px;
+  /* END .time-nav */
+}
+/* line 117, ../scss/style.scss */
+article .time-nav {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+/* line 121, ../scss/style.scss */
+article .time-nav .older, article .time-nav .newer {
+  padding: 1rem;
+  border: 1px solid #eee;
+  margin: 0px auto 1rem auto;
+  text-align: center;
+}
+/* line 127, ../scss/style.scss */
+article .time-nav:first-of-type .older {
+  display: none;
+}
+/* line 128, ../scss/style.scss */
+article .time-nav:last-of-type .newer {
+  display: none;
+}
+/* line 130, ../scss/style.scss */
+article section {
+  float: left;
+  clear: both;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3%;
+  margin: 1.5rem 0px;
+}
+
+/* line 140, ../scss/style.scss */
+footer {
+  padding: 2rem 0px;
+  border-top: 1px solid #eee;
 }
 
 @media only screen and (min-width: 768px) {
-  /* line 92, ../scss/style.scss */
+  /* line 146, ../scss/style.scss */
   header {
     position: fixed;
+  }
+
+  /* line 149, ../scss/style.scss */
+  article {
+    padding: 4rem 0px;
   }
 }
 /* --- Sub-Theme Customization --- */

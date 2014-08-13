@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <article>
+  <article class="container"><div class="inner">
 
     <?php if ( have_posts() ) :
 
@@ -24,7 +24,7 @@
         next_post();
       else :
         // prev/next page
-        posts_nav_link();
+        posts_nav_link('&nbsp;','<div class="newer">Newer Posts</div>','<div class="older">Older Posts</div>');
       endif;
     ?>
       </div><!--.time-nav-->
@@ -40,7 +40,7 @@
       </div><!-- #post-0 -->
     <?php endif; ?>
 
-  </article>
+  </div></article>
 
 <?php // endif; ?>
 

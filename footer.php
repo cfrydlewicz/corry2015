@@ -1,11 +1,9 @@
-<footer>
+<footer class="container"><div class="inner">
   <nav>
-    <ul>
-      <?php wp_nav_menu( array('menu' => 'Footer Nav' )); ?>
-    </ul>
+    <?php wp_nav_menu( array('menu' => 'Footer Nav' )); ?>
   </nav>
 	<p class="copyright">Copyright &copy;<span itemprop="copyrightYear"><?php echo date('Y'); ?></span> <span itemprop="copyrightHolder">Corry Frydlewicz</span>. All rights reserved.</p>
-</footer>
+</div></footer>
 <?php wp_footer(); ?>
 </div><!--.total-wrapper-->
 </body></html>

@@ -1,25 +1,53 @@
 /* SCSS Variables */
-/* line 8, ../scss/theme.scss */
+@-ms-viewport {
+  width: device-width;
+}
+
+/* line 12, ../scss/theme.scss */
 body {
   font-family: sans-serif;
 }
 
-/* line 12, ../scss/theme.scss */
+/* line 16, ../scss/theme.scss */
 a {
   text-decoration: none;
 }
 
-/* line 16, ../scss/theme.scss */
+/* line 20, ../scss/theme.scss */
 .total-wrapper {
   min-width: 480px;
   max-width: 100%;
 }
+/* line 23, ../scss/theme.scss */
+.total-wrapper img {
+  max-width: 100%;
+  height: auto;
+}
 
-/* line 21, ../scss/theme.scss */
-header {
+/* line 29, ../scss/theme.scss */
+.container {
+  float: left;
+  clear: both;
   width: 100%;
 }
-/* line 23, ../scss/theme.scss */
+/* line 33, ../scss/theme.scss */
+.container .inner {
+  width: 90%;
+  margin: 0px auto;
+}
+
+/* line 39, ../scss/theme.scss */
+header {
+  padding: 1.5rem 0px .75rem 0px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+/* line 43, ../scss/theme.scss */
+header .header-logo {
+  float: left;
+  clear: left;
+}
+/* line 46, ../scss/theme.scss */
 header .header-logo a {
   display: block;
   width: 250px;
@@ -27,11 +55,59 @@ header .header-logo a {
   background-position: 0px 0px;
   text-indent: -999999em;
   background-image: url("images/logo-header.png");
+  background-size: auto 100%;
+}
+
+/* line 58, ../scss/theme.scss */
+article {
+  padding: 2rem 0px;
+  /* END .time-nav */
+}
+/* line 60, ../scss/theme.scss */
+article .time-nav {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+/* line 64, ../scss/theme.scss */
+article .time-nav .older, article .time-nav .newer {
+  padding: 1rem;
+  border: 1px solid #eee;
+  margin: 0px auto 1rem auto;
+  text-align: center;
+}
+/* line 70, ../scss/theme.scss */
+article .time-nav:first-of-type .older {
+  display: none;
+}
+/* line 71, ../scss/theme.scss */
+article .time-nav:last-of-type .newer {
+  display: none;
+}
+/* line 73, ../scss/theme.scss */
+article section {
+  float: left;
+  clear: both;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3%;
+  margin: 1.5rem 0px;
+}
+
+/* line 83, ../scss/theme.scss */
+footer {
+  padding: 2rem 0px;
+  border-top: 1px solid #eee;
 }
 
 @media only screen and (min-width: 768px) {
-  /* line 35, ../scss/theme.scss */
+  /* line 89, ../scss/theme.scss */
   header {
     position: fixed;
+  }
+
+  /* line 92, ../scss/theme.scss */
+  article {
+    padding: 4rem 0px;
   }
 }
