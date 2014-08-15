@@ -7,8 +7,7 @@ function theme_setup() {
 
 	// Enable support for Post Thumbnails
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1536, 384, true );
-	add_image_size( 'twentyfourteen-full-width', 1038, 576, true );
+	set_post_thumbnail_size( 1440, 300, true );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -48,6 +47,16 @@ function get_top_parent($cat){
   $curr_cat = explode('/',$curr_cat);
   $idObj = get_category_by_slug($curr_cat[0]);
   echo  $id = $idObj->term_id;
+}
+
+function get_post_thumbnail_url() { // requires $post to be initialized
+  $thumbnail = '';
+  if (function_exists('has_post_thumbnail')) {
+    if ( has_post_thumbnail() ) {
+      $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 5600,1000 ), false, '' );
+      echo $thumbnail[0];
+    }
+  }
 }
 
 ?>

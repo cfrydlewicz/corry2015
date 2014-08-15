@@ -18,6 +18,7 @@ module.exports = function(grunt) {
 			js : {
 				src : [
 					'js/jquery-2.1.1.min.js',
+					'js/modernizr.custom.js',
           'js/custom.js'
 				],
 				dest : 'js/corry2015.concat.js'
@@ -45,7 +46,16 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 version']
+      },
+      your_target: {
+        src: 'css/style.css'
+      },
+    },
+
     cssmin: {
       minify: {
         src: 'css/style.css',
@@ -57,8 +67,12 @@ module.exports = function(grunt) {
 			files: [
         'Gruntfile.js',
         'package.json',
-        'scss/*.scss',
-        'js/*.js'
+        'scss/print.scss',
+        'scss/reset.scss',
+        'scss/shortcuts.scss',
+        'scss/subtheme.scss',
+        'scss/theme.scss',
+        'js/custom.js'
       ],
       tasks: ['default']
     }
@@ -66,13 +80,14 @@ module.exports = function(grunt) {
 	});
 
 	// TASKS
-	grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task(s).
-	grunt.registerTask( 'default', [ 'concat', 'uglify', 'compass', 'cssmin' ] );
+	grunt.registerTask( 'default', [ 'concat', 'uglify', 'compass', 'autoprefixer', 'cssmin' ] );
 
 };

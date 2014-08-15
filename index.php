@@ -1,47 +1,34 @@
 <?php get_header(); ?>
 
-  <article class="container"><div class="inner">
+<article class="container<?php if ( !is_single() ) { echo " listing"; } ?>">
 
-    <?php if ( have_posts() ) :
+  <?php if ( have_posts() ) : ?>
 
-      if ( ! is_single() ) : ?>
-        <div class="time-nav">
-          <?php posts_nav_link('&nbsp;','<div class="newer">Newer Posts</div>','<div class="older">Older Posts</div>'); ?>
-        </div><!--.time-nav-->
-      <?php endif;
-      
-      while ( have_posts() ) : the_post();
-        get_template_part( 'content', get_post_format() );
-      endwhile;
-    ?>
-      
-      <div class="time-nav">
+    <div class="time-nav">
+      <?php posts_nav_link('<div class=\"clear\"></div>','<div class="newer"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 60" enable-background="new 0 0 120 60" xml:space="preserve"><ellipse cx="-72.8" cy="-44.5" rx="0.2" ry="0"/><path d="M120,60c0-33.1-26.9-60-60-60S0,26.9,0,60 M10,60c0-27.6,22.4-50,50-50s50,22.4,50,50"/></svg><span>Newer Posts</span></div>','<div class="older"><span>Older Posts</span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 60" enable-background="new 0 0 120 60" xml:space="preserve"><ellipse cx="-72.8" cy="-44.5" rx="0.2" ry="0"/><path d="M120,60c0-33.1-26.9-60-60-60S0,26.9,0,60 M10,60c0-27.6,22.4-50,50-50s50,22.4,50,50"/></svg></div>'); ?>
+    </div><!--.time-nav-->
 
-    <?php
-      if ( is_single() ) :
-        // prev/next single post
-        previous_post();
-        next_post();
-      else :
-        // prev/next page
-        posts_nav_link('&nbsp;','<div class="newer">Newer Posts</div>','<div class="older">Older Posts</div>');
-      endif;
-    ?>
-      </div><!--.time-nav-->
+    <?php while ( have_posts() ) :
+      the_post();
+      get_template_part( 'content', get_post_format() );
+    endwhile; ?>
 
-    <?php else : ?>
-      <!-- have_posts() Failed. :( -->
-      <div id="post-0" class="post error404 not-found">
-        <h1 class="entry-title"><?php _e( 'Not Found' ); ?></h1>
-        <div class="entry-content">
-          <p>Sorry, but that content couldn\'t be found. Try searching for it if you like.</p>
-          <?php get_search_form(); ?>
-        </div><!-- .entry-content -->
-      </div><!-- #post-0 -->
-    <?php endif; ?>
+    <div class="time-nav">
+      <?php posts_nav_link('<div class=\"clear\"></div>','<div class="newer"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 60" enable-background="new 0 0 120 60" xml:space="preserve"><ellipse cx="-72.8" cy="-44.5" rx="0.2" ry="0"/><path d="M120,60c0-33.1-26.9-60-60-60S0,26.9,0,60 M10,60c0-27.6,22.4-50,50-50s50,22.4,50,50"/></svg><span>Newer Posts</span></div>','<div class="older"><span>Older Posts</span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 60" enable-background="new 0 0 120 60" xml:space="preserve"><ellipse cx="-72.8" cy="-44.5" rx="0.2" ry="0"/><path d="M120,60c0-33.1-26.9-60-60-60S0,26.9,0,60 M10,60c0-27.6,22.4-50,50-50s50,22.4,50,50"/></svg></div>'); ?>
+    </div><!--.time-nav-->
 
-  </div></article>
+  <?php else : ?>
+    <!-- have_posts() Failed. :( -->
+    <div id="post-0" class="post error404 not-found">
+      <h1 class="entry-title"><?php _e( 'Not Found' ); ?></h1>
+      <div class="entry-content">
+        <p>Sorry, but that content couldn't be found. Try searching for it if you like.</p>
+        <?php get_search_form(); ?>
+      </div><!-- .entry-content -->
+    </div><!-- #post-0 -->
+  <?php endif; ?>
 
-<?php // endif; ?>
+</article>
 
-<?php get_footer(); ?>
+<?php get_sidebar(); ?>
+<?php get_footer();
