@@ -99,4 +99,60 @@ jQuery(document).ready( function() {
     }
   });
 
+  // single pages
+  jQuery('.single .time-nav a').mouseenter(function(){
+    jQuery(this).animate({
+      width: ["98%", "swing"]
+    }, 400, function(){
+      // done!
+    });
+  });
+  jQuery('.single .time-nav a').mouseleave(function(){
+    jQuery(this).animate({
+      width: ["92%", "swing"]
+    }, 200, function(){
+      // done!
+    });
+  });
+
+  // content images wrapped in link fix
+  jQuery('.entry-content').children('p').children('a').children('img').each(function(){
+    jQuery(this).parent('a').addClass("img-container");
+  });
+
+  jQuery('.entry-content a').mouseenter(function(){
+    if ( jQuery(this).hasClass('img-container') ){
+      // do nothing
+    }
+    else if ( jQuery(this).parent('div').hasClass('alignleft') ){
+      // do nothing
+    }
+    else if ( jQuery(this).parent('div').hasClass('alignright') ){
+      // do nothing
+    }
+    else if ( jQuery(this).parent('div').hasClass('aligncenter') ){
+      // do nothing
+    }
+    else {
+      jQuery(this).animate({
+        padding: ["+=2px", "swing"]
+        }, 200, function(){
+          // done!
+        });
+    }
+  });
+  jQuery('.entry-content a').mouseleave(function(){
+    if ( jQuery(this).hasClass('img-container') ){
+      // do nothing
+    }
+    else {
+      jQuery(this).animate({
+        padding: ["-=2px", "swing"]
+        }, 200, function(){
+          // done!
+        });
+    }
+  });
+
+
 });

@@ -1,23 +1,69 @@
 <?php get_header(); ?>
 
-<article class="container single">
+<?php the_post(); ?>
+<article class="container single post-<?php the_ID(); ?>"><div class="inner">
+  <div class="text-container">
 
-  <?php the_post(); ?>
+    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+    <div class="entry-meta-container">
+      <div class="entry-meta date">
+        <p><?php post_date(); ?></p>
+      </div>
 
-		<?php get_template_part( 'content', get_post_format() ); ?>
+      <?php if ( get_comments_number() > 0 ) : ?>
+        <div class="entry-meta comments-exist"><?php comments_popup_link( '<!--No comments-->', '1', '%', 'comments-link', '<!--Comments are off for this post-->'); ?></div>
+      <?php endif; ?>
+
+      <div class="entry-meta categories">
+        <p>Filed Under: <span class="cat-links"><?php
+          $taxonomy = 'category';
+          $post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
+          $separator = ', ';
+          if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) {
+            $term_ids = implode( ',' , $post_terms );
+            $terms = wp_list_categories( 'title_li=&style=none&echo=0&taxonomy=' . $taxonomy . '&include=' . $term_ids );
+            $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
+            echo  $terms;
+            } ?></span></p>
+      </div>
+
+      <?php if ( is_admin() ) {
+        edit_post_link( __( 'Edit' ), '<div class="entry-meta edit-link">', '</div>' );
+      } ?>
+    </div><!--.entry-meta-container-->
+
+    <?php if ( has_post_thumbnail() ) {
+      echo "<a href=\"".wp_get_attachment_url( get_post_thumbnail_id() )."\">";
+      the_post_thumbnail();
+      echo "</a>";
+    } ?>
+
+    <div class="entry-content">
+      <?php the_content(); ?>
+    </div><!-- .entry-content -->
+
+    <div class="entry-meta-container">
+      <div class="entry-meta categories">
+        <p>Filed Under: <span class="cat-links"><?php if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) { echo $terms; } ?></span></p>
+        <p>Tags: <span class="tag-links"><?php the_tags( '<div class="entry-meta tags"><span class="tag-links">', ', ', '</span></div>' ); ?></span></p>
+      </div>
+
+      <?php if ( is_admin() ) {
+        edit_post_link( __( 'Edit' ), '<div class="entry-meta edit-link">', '</div>' );
+      } ?>
+    </div><!--.entry-meta-container-->
 
     <div class="time-nav">
-      <?php previous_post(); ?>
-      <?php next_post(); ?>
+      <div class="newer"><?php next_post_link('%link', '%title', TRUE); ?></div>
+      <div class="older"><?php previous_post_link('%link', '%title', TRUE); ?></div>
     </div><!--.time-nav-->
 
-    <?php // If comments are open or we have at least one comment, load up the comment template.
-      if ( comments_open() || get_comments_number() ) {
-        comments_template();
-      }
-    ?>
+    <?php if ( comments_open() || get_comments_number() ) {
+      comments_template();
+    } ?>
 
-</article>
+  </div><!--.text-container-->
+</div></article>
 
 <?php
 get_sidebar( 'content' );
