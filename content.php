@@ -9,7 +9,7 @@
       </div>
 
       <?php if ( get_comments_number() > 0 ) : ?>
-        <div class="entry-meta comments-exist"><?php comments_popup_link( '<!--No comments-->', '1', '%', 'comments-link', '<!--Comments are off for this post-->'); ?></div>
+        <div class="entry-meta comments-exist"><?php comments_popup_link( '<!--No comments-->', '1 comment', '% comments', 'comments-link', '<!--Comments are off for this post-->'); ?></div>
       <?php endif; ?>
 
     </div><!--.entry-meta-container-->

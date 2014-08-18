@@ -191,14 +191,15 @@ header {
     float: left;
     clear: left;
     max-width: 40%;
-    margin-top: .75rem;
+    margin-top: 1.5rem;
     a {
       svg {display: none;}
       html.inlinesvg & {
         img {display: none;}
         svg {
           display: block;
-          max-width: 100%;
+          width: auto;
+          height: 60px;
           path {
             fill: $linkcolor;
           }
@@ -211,9 +212,9 @@ header {
   } /* END .header-logo */
   .search-container {
     float: right;
-    clear:right;
-    width:32px;
-    height:30px;
+    clear: right;
+    width: 40px;
+    height: 40px;
     background-image: url('images/search-grey.png');
     background-repeat: no-repeat;
     background-position: center right;
@@ -242,8 +243,8 @@ header {
   .menu-container {
     float: right;
     clear:right;
-    width:32px;
-    height:32px;
+    width:40px;
+    height:40px;
     background-image: url('images/menu-grey.png');
     background-size: 24px auto;
     background-repeat: no-repeat;
@@ -470,6 +471,7 @@ article {
         float: right;
         clear: right;
         a {
+          display: block;
           color: #fff;
           background-color: $linkcolor;
           border-radius: 16px;
@@ -744,8 +746,28 @@ footer {
 @media only screen and (min-width: $break1){
   header {
     position: fixed;
+    .header-logo {
+      margin-top: .25rem;
+      html.inlinesvg & a svg {
+        height: 50px;
+      }
+    }
+    .menu-container,
+    .search-container {
+      margin-top: .25rem;
+    }
+    .menu-container {
+      clear: none;
+      margin-right: .75rem;
+      .inner-menu {
+        margin-top: 55px;
+      }
+    }
   }
-  article {padding: 4rem 0px;}
+  
+  article {
+    padding: 4rem 0px;
+  }
 
   .alignright, .alignleft {
     max-width: 50%;
@@ -771,6 +793,9 @@ footer {
 
 
 @media only screen and (min-width: $break2){
+  
+  
+  
 }
 
 
