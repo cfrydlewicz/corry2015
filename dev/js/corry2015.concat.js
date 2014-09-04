@@ -14,7 +14,7 @@ jQuery(document).ready( function() {
   jQuery('.search-container').click(function(){
     jQuery(this).toggleClass('open');
     jQuery(this).animate({
-      width: ["134px", "swing"]
+      width: ["140px", "swing"]
     }, 200, function(){
       // done!
     });

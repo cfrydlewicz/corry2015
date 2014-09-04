@@ -6,7 +6,7 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-  <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic|Oxygen:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url');?>/style.css" />
   <script type="text/javascript" src="<?php bloginfo('template_url');?>/scripts.js"></script>
 	<?php wp_head(); ?>
@@ -20,9 +20,7 @@
         <img src="<?php bloginfo('template_url');?>/images/logo-header.png" />
       </a>
     </div>
-    <?php if ( ! is_front_page() ) : ?>
-      <div class="subsection-logo"></div>
-    <?php endif; ?>
+    <div class="subsection-logo"></div>
     <div class="search-container"><?php get_search_form(); ?></div>
     <div class="menu-container"><div class="inner-menu"><?php wp_nav_menu(); ?></div></div>
   </div></header>

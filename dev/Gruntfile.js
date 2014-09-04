@@ -89,5 +89,7 @@ module.exports = function(grunt) {
 
 	// Default task(s).
 	grunt.registerTask( 'default', [ 'concat', 'uglify', 'compass', 'autoprefixer', 'cssmin' ] );
+	grunt.registerTask( 'cssonly', [ 'concat:css', 'compass', 'autoprefixer', 'cssmin' ] );
+	grunt.registerTask( 'jsonly', [ 'concat:js', 'uglify' ] );
 
 };
