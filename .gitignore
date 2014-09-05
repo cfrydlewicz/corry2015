@@ -43,3 +43,5 @@ dev/ref/
 dev/.sass-cache/
 dev/.sass-cache/14853855c369484f2529ecda4d74dd0748c8e68f/style.scssc
 dev/.sass-cache/14853855c369484f2529ecda4d74dd0748c8e68f/theme.scssc
+*.scssc
+images/bg-splash1040.jpg

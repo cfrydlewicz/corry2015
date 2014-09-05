@@ -45,7 +45,7 @@
     <div class="entry-meta-container">
       <div class="entry-meta categories">
         <p>Filed Under: <span class="cat-links"><?php if ( !empty( $post_terms ) && !is_wp_error( $post_terms ) ) { echo $terms; } ?></span></p>
-        <p>Tags: <span class="tag-links"><?php the_tags( '<div class="entry-meta tags"><span class="tag-links">', ', ', '</span></div>' ); ?></span></p>
+        <p>Tags: <span class="tag-links"><?php the_tags( '', ', ', '' ); ?></span></p>
       </div>
 
       <?php if ( is_admin() ) {
