@@ -1,4 +1,4 @@
-/* line 8, ../scss/reset.scss */
+/* line 1, ../scss/reset.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -50,7 +50,7 @@ caption, th, td {
   font-weight: normal;
 }
 
-/* line 42, ../scss/reset.scss */
+/* line 41, ../scss/reset.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: "";

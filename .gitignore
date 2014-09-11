@@ -48,3 +48,6 @@ images/bg-splash1040.jpg
 *.scssc
 *.scssc
 *.scssc
+/dev/corry2015/nbproject/private/
+dev/corry2015/nbproject/project.properties
+dev/corry2015/nbproject/project.xml
