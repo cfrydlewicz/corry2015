@@ -54,8 +54,14 @@
     </div><!--.entry-meta-container-->
 
     <div class="time-nav">
-      <div class="newer"><?php next_post_link('%link', '%title', TRUE); ?></div>
-      <div class="older"><?php previous_post_link('%link', '%title', TRUE); ?></div>
+      <?php if (strlen(get_next_post(TRUE)->post_title) > 0) { ?>
+        <h3>Next Post:</h3>
+        <div class="newer"><?php next_post_link('%link', '%title', TRUE); ?></div>
+      <?php } ?>
+      <?php if (strlen(get_previous_post(TRUE)->post_title) > 0) { ?>
+        <h3>Previous Post:</h3>
+        <div class="older"><?php previous_post_link('%link', '%title', TRUE); ?></div>
+      <?php } ?>
     </div><!--.time-nav-->
 
     <?php if ( comments_open() || get_comments_number() ) {

@@ -19,7 +19,8 @@ jQuery(document).ready( function() {
       // done!
     });
     jQuery(this).children('form').children('div').children('#s').animate({
-      width: ["100px", "swing"]
+      width: ["100px", "swing"],
+      padding: ["0px 10px", "swing"]
     }, 200, function(){
       // done!
     });
@@ -29,6 +30,7 @@ jQuery(document).ready( function() {
     }, 200, function(){
       // done!
     });
+    jQuery('#s').focus();
   });
 
   // top menu

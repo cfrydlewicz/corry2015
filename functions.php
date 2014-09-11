@@ -2,12 +2,12 @@
 
 function theme_setup() {
 
-	// Add RSS feed links to <head> for posts and comments.
-	add_theme_support( 'automatic-feed-links' );
-
 	// Enable support for Post Thumbnails
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1440, 300, true );
+	set_post_thumbnail_size( 1440, 9999 ); // Unlimited height, soft crop
+
+	// Add RSS feed links to <head> for posts and comments.
+	add_theme_support( 'automatic-feed-links' );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -22,6 +22,7 @@ function theme_setup() {
 	) );
 
 }
+add_action( 'after_setup_theme', 'theme_setup' );
 
 function post_thumbnail() {
 
@@ -67,8 +68,13 @@ function add_category_to_single($classes) {
       $classes[] = 'category-'.$category->category_nicename;
         $parent = $category->category_parent;
         if ( $parent != '' ) {
-            $category = &get_category( $parent );
-            $classes[] = 'category-'.$category->category_nicename;
+          $category = &get_category( $parent );
+          $classes[] = 'category-'.$category->category_nicename;
+          $parent = $category->category_parent;
+          if ( $parent != '' ) {
+              $category = &get_category( $parent );
+              $classes[] = 'category-'.$category->category_nicename;
+          }
         }
     }
   }
