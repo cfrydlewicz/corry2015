@@ -11,8 +11,9 @@
 jQuery(document).ready( function() {
 
   // search bar
-  jQuery('.search-container').click(function(){
-    jQuery(this).toggleClass('open');
+  jQuery('.search-container.closed').click(function(){
+    jQuery(this).removeClass('closed');
+    jQuery(this).addClass('open');
     jQuery(this).animate({
       width: ["140px", "swing"]
     }, 200, function(){

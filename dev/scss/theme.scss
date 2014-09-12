@@ -56,6 +56,11 @@ a.button {
 }
 
 .screen-reader-text {
+  font-size: 0px;
+  line-height: 0px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
   visibility: hidden;
 }
 
@@ -285,138 +290,156 @@ header {
         content: ": Pro";
       }
     }
-    
   }
+}
 
-  .search-container {
-    float: right;
-    clear: right;
-    width: 40px;
+.search-container {
+  float: right;
+  clear: right;
+  width: 40px;
+  height: 40px;
+  background-image: url('images/search-grey.png');
+  background-color: $light1;
+  background-repeat: no-repeat;
+  background-position: center right;
+  border-radius: $radius;
+  cursor: pointer;
+  &:hover {
+    background-image: url('images/search-white.png');
+    background-color: $hovercolor;
+  }
+  .category-pro & {
+    background-color: $dark1;
+    border-radius: 0px;
+    &:hover {background-color: $hovercolor;}
+  }
+  label {
+    float: left;
+    clear: left;
+  }
+  label span {display: none;}
+  input {
+    box-sizing: border-box;
+    width: 0px;
+    padding: 0px;
     height: 40px;
-    background-image: url('images/search-grey.png');
-    background-color: $light1;
-    background-repeat: no-repeat;
-    background-position: center right;
-    border-radius: $radius;
-    cursor: pointer;
-    &:hover {
-      background-image: url('images/search-white.png');
-      background-color: $hovercolor;
+    border: 0px;
+    background-color: #fff; /* pure white */
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    &.search-field {
     }
-    .category-pro & {
-      background-color: $dark1;
-      border-radius: 0px;
-      &:hover {background-color: $hovercolor;}
-    }
-    label {display: none;}
-    input {
-        box-sizing: border-box;
-        width: 0px;
-        padding: 0px;
-        height: 40px;
-        border: 0px;
-        background-color: #fff; /* pure white */
-        border-top-left-radius: $radius;
-        border-bottom-left-radius: $radius;
-      &#s {
-        cursor: default;
-      }
-      &#searchsubmit {
-        text-indent: -9999px;
-        background-color: transparent;
-        cursor: pointer;
-        &:hover {background-color: rgba(242,249,255,0.2);}
-      }
+    &.search-submit {
+      float: left;
+      clear: right;
+      text-indent: -9999px;
+      background-color: transparent;
+      color: transparent;
+      cursor: pointer;
+      &:hover {background-color: rgba(242,249,255,0.2);}
     }
   }
-  .menu-container {
-    float: right;
-    clear:right;
-    width:40px;
-    height:40px;
-    background-image: url('images/menu-grey.png');
-    background-color: $light1;
-    background-size: 24px auto;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: $radius;
-    cursor: pointer;
-    margin-top: .75rem;
-    .category-pro & {
-      background-color: $dark1;
-      border-radius: 0px;
+  &.open {
+    input.search-field {
+      width: 100px;
     }
-    &.open {
-      background-image: url('images/menu-white.png');
-      background-color: $linkcolor;
-      border-color: $linkcolor;
+    input.search-submit {
+      text-indent: 0px;
+      width: 40px;
+      background-color: transparent;
+      cursor: pointer;
+      &:hover {background-color: rgba(242,249,255,0.2);}
     }
-    &:hover {
-      background-image: url('images/menu-white.png');
-      background-color: $hovercolor;
-      border-color: $hovercolor;
-    }
-    .inner-menu {
-      display: none;
-      position: absolute;
-      box-sizing: border-box;
-      margin-top: 34px;
-      right: 5%;
-      width: 90%;
-      background-color: #fff;
-      border: 1px solid $grey;
-      ul {
-        margin: 0px;
-        li {
-          float: left;
-          clear: left;
-          box-sizing: border-box;
-          margin-bottom: 0px;
-          width: 50%;
-          min-height: 0px;
-          padding: 1.5rem;
-          background-image: none;
-          background-color: #000;
-          color: #fff;
-          &:nth-child(even){
-            background-color: #fff;
-            color: #000;
+  }
+} /* .search-container */
+
+.menu-container {
+  float: right;
+  clear:right;
+  width:40px;
+  height:40px;
+  background-image: url('images/menu-grey.png');
+  background-color: $light1;
+  background-size: 24px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: $radius;
+  cursor: pointer;
+  margin-top: .75rem;
+  .category-pro & {
+    background-color: $dark1;
+    border-radius: 0px;
+  }
+  &.open {
+    background-image: url('images/menu-white.png');
+    background-color: $linkcolor;
+    border-color: $linkcolor;
+  }
+  &:hover {
+    background-image: url('images/menu-white.png');
+    background-color: $hovercolor;
+    border-color: $hovercolor;
+  }
+  .inner-menu {
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    margin-top: 34px;
+    right: 5%;
+    width: 90%;
+    background-color: #fff;
+    border: 1px solid $grey;
+    ul {
+      margin: 0px;
+      li {
+        float: left;
+        clear: left;
+        box-sizing: border-box;
+        margin-bottom: 0px;
+        width: 50%;
+        min-height: 0px;
+        padding: 1.5rem;
+        background-image: none;
+        background-color: #000;
+        color: #fff;
+        &:nth-child(even){
+          background-color: #fff;
+          color: #000;
+        }
+        a {
+          display: block;
+          &:first-child {
+            font-weight: bold;
+            text-transform: uppercase;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid $grey;
           }
-          a {
-            display: block;
-            &:first-child {
-              font-weight: bold;
-              text-transform: uppercase;
-              padding-bottom: 1rem;
-              margin-bottom: 1rem;
-              border-bottom: 1px solid $grey;
-            }
-          }
-          &:nth-child(even) {
-            clear: right;
-          }
-          ul {
+        }
+        &:nth-child(even) {
+          clear: right;
+        }
+        ul {
+          padding: 0px;
+          border: none;
+          li, li:nth-child(even) {
+            float: left;
+            clear: both;
+            width: 100%;
             padding: 0px;
-            border: none;
-            li, li:nth-child(even) {
-              float: left;
-              clear: both;
-              width: 100%;
+            margin-left: 0px;
+            margin-bottom: 1rem;
+            background-color: transparent;
+            a:first-child {
+              font-weight: normal;
+              text-transform: none;
+              margin-bottom: 0px;
               padding: 0px;
-              margin-left: 0px;
-              margin-bottom: 1rem;
-              background-color: transparent;
-              a:first-child {
-                font-weight: normal;
-                text-transform: none;
-                margin-bottom: 0px;
-                padding: 0px;
-                border: 0px;
-              }
-              ul {display: none;}
+              border: 0px;
             }
-            li:last-child {margin-bottom: 0px;}
+            ul {display: none;}
           }
+          li:last-child {margin-bottom: 0px;}
         }
       }
     }
@@ -569,7 +592,7 @@ section {
   }
 } /* END section */
 
-@media only screen and (min-width: $break2) {
+@media only screen and (min-width: $break3) {
   section {
     .thumbnail-container {
       border-radius: $radius*2;
@@ -895,6 +918,9 @@ section {
 .fbSEOComments, #fbSEOComments {
   float: left;
   clear: both;
+  width: auto !important;
+  max-width: 100%;
+  overflow-x: scroll;
 }
 
 
@@ -924,89 +950,87 @@ section {
     h3 {
       margin-bottom: .5rem;
     }
-    ul {
-      li {
-        font-size: 1rem;
-        line-height: normal;
-        background-color: $white;
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-size: 30px auto;
-        padding: 6px 0px 0px 40px;
-        box-sizing: border-box;
+    li {
+      font-size: .9rem;
+      line-height: normal;
+      background-color: $white;
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 30px auto;
+      padding: 6px 0px 0px 40px;
+      box-sizing: border-box;
 /*      border: 1px solid $light2;  */
-        border-radius: $radius;
-        height: 30px;
-        margin-bottom: .5rem;
-        .category-pro & {
-          background-color: $black;
-          border-radius: 0px;
-        }
-        &:last-child {margin-bottom: 0px;}
-        &.about {
-          background-image: url('images/icon-about.png');
-          &:hover {background-image: url('images/icon-about-hover.png');}
-        }
-        &.blizzard {
-          background-image: url('images/icon-battlenet.png');
-          &:hover {background-image: url('images/icon-battlenet-hover.png');}
-        }
-        &.contact {
-          background-image: url('images/icon-contact.png');
-          &:hover {background-image: url('images/icon-contact-hover.png');}
-        }
-        &.facebook {
-          background-image: url('images/icon-facebook.png');
-          &:hover {background-image: url('images/icon-facebook-hover.png');}
-        }
-        &.github {
-          background-image: url('images/icon-github.png');
-          &:hover {background-image: url('images/icon-github-hover.png');}
-        }
-        &.googleplus {
-          background-image: url('images/icon-googleplus.png');
-          &:hover {background-image: url('images/icon-googleplus-hover.png');}
-        }
-        &.linkedin {
-          background-image: url('images/icon-linkedin.png');
-          &:hover {background-image: url('images/icon-linkedin-hover.png');}
-        }
-        &.lol {
-          background-image: url('images/icon-lol.png');
-          &:hover {background-image: url('images/icon-lol-hover.png');}
-        }
-        &.mtgo {
-          background-image: url('images/icon-mtgo.png');
-          &:hover {background-image: url('images/icon-mtgo-hover.png');}
-        }
-        &.psn {
-          background-image: url('images/icon-psn.png');
-          &:hover {background-image: url('images/icon-psn-hover.png');}
-        }
-        &.resume {
-          background-image: url('images/icon-resume.png');
-          &:hover {background-image: url('images/icon-resume-hover.png');}
-        }
-        &.spotify {
-          background-image: url('images/icon-spotify.png');
-          &:hover {background-image: url('images/icon-spotify-hover.png');}
-        }
-        &.stackoverflow {
-          background-image: url('images/icon-stackoverflow.png');
-          &:hover {background-image: url('images/icon-stackoverflow-hover.png');}
-        }
-        &.steam {
-          background-image: url('images/icon-steam.png');
-          &:hover {background-image: url('images/icon-steam-hover.png');}
-        }
-        &.twitter {
-          background-image: url('images/icon-twitter.png');
-          &:hover {background-image: url('images/icon-twitter-hover.png');}
-        }
-        &.xbl {
-          background-image: url('images/icon-xbl.png');
-          &:hover {background-image: url('images/icon-xbl-hover.png');}
-        }
+      border-radius: $radius;
+      height: 30px;
+      margin-bottom: .5rem;
+      .category-pro & {
+        background-color: $black;
+        border-radius: 0px;
+      }
+      &:last-child {margin-bottom: 0px;}
+      &.about {
+        background-image: url('images/icon-about.png');
+        &:hover {background-image: url('images/icon-about-hover.png');}
+      }
+      &.blizzard {
+        background-image: url('images/icon-battlenet.png');
+        &:hover {background-image: url('images/icon-battlenet-hover.png');}
+      }
+      &.contact {
+        background-image: url('images/icon-contact.png');
+        &:hover {background-image: url('images/icon-contact-hover.png');}
+      }
+      &.facebook {
+        background-image: url('images/icon-facebook.png');
+        &:hover {background-image: url('images/icon-facebook-hover.png');}
+      }
+      &.github {
+        background-image: url('images/icon-github.png');
+        &:hover {background-image: url('images/icon-github-hover.png');}
+      }
+      &.googleplus {
+        background-image: url('images/icon-googleplus.png');
+        &:hover {background-image: url('images/icon-googleplus-hover.png');}
+      }
+      &.linkedin {
+        background-image: url('images/icon-linkedin.png');
+        &:hover {background-image: url('images/icon-linkedin-hover.png');}
+      }
+      &.lol {
+        background-image: url('images/icon-lol.png');
+        &:hover {background-image: url('images/icon-lol-hover.png');}
+      }
+      &.mtgo {
+        background-image: url('images/icon-mtgo.png');
+        &:hover {background-image: url('images/icon-mtgo-hover.png');}
+      }
+      &.psn {
+        background-image: url('images/icon-psn.png');
+        &:hover {background-image: url('images/icon-psn-hover.png');}
+      }
+      &.resume {
+        background-image: url('images/icon-resume.png');
+        &:hover {background-image: url('images/icon-resume-hover.png');}
+      }
+      &.spotify {
+        background-image: url('images/icon-spotify.png');
+        &:hover {background-image: url('images/icon-spotify-hover.png');}
+      }
+      &.stackoverflow {
+        background-image: url('images/icon-stackoverflow.png');
+        &:hover {background-image: url('images/icon-stackoverflow-hover.png');}
+      }
+      &.steam {
+        background-image: url('images/icon-steam.png');
+        &:hover {background-image: url('images/icon-steam-hover.png');}
+      }
+      &.twitter {
+        background-image: url('images/icon-twitter.png');
+        &:hover {background-image: url('images/icon-twitter-hover.png');}
+      }
+      &.xbl {
+        background-image: url('images/icon-xbl.png');
+        &:hover {background-image: url('images/icon-xbl-hover.png');}
       }
     }
   }
