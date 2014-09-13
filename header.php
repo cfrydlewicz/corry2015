@@ -25,7 +25,7 @@
         </div>
         <div class="subsection-logo"></div>
         <div class="search-container closed"><?php get_search_form(); ?></div>
-        <div class="menu-container"><div class="inner-menu"><?php wp_nav_menu(); ?></div></div>
+        <div class="menu-container"><span class="menu-text">Menu</span><div class="inner-menu"><?php wp_nav_menu(); ?></div></div>
       </div>
     </div>
   </header>

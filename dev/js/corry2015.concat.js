@@ -15,23 +15,23 @@ jQuery(document).ready( function() {
     jQuery(this).removeClass('closed');
     jQuery(this).addClass('open');
     jQuery(this).animate({
-      width: ["140px", "swing"]
+      width: ["160px", "swing"]
     }, 200, function(){
       // done!
     });
-    jQuery(this).children('form').children('div').children('#s').animate({
-      width: ["100px", "swing"],
+    jQuery(this).children('form').children('div').children('.search-field').animate({
+      width: ["120px", "swing"],
       padding: ["0px 10px", "swing"]
     }, 200, function(){
       // done!
     });
-    jQuery(this).children('form').children('div').children('#searchsubmit').animate({
+    jQuery(this).children('form').children('div').children('.search-submit').animate({
       width: ["30px", "swing"],
       borderLeft: ["1px", "swing"]
     }, 200, function(){
       // done!
     });
-    jQuery('#s').focus();
+    jQuery('.search-field').focus();
   });
 
   // top menu
@@ -125,41 +125,65 @@ jQuery(document).ready( function() {
   jQuery('.entry-content').children('figure').children('a').children('img').each(function(){
     jQuery(this).parent('a').addClass("img-container");
   });
-
-  jQuery('.entry-content a').mouseenter(function(){
-    if ( jQuery(this).hasClass('img-container') ){
-      // do nothing
-    }
-    else if ( jQuery(this).parent('div').hasClass('alignleft') ){
-      // do nothing
-    }
-    else if ( jQuery(this).parent('div').hasClass('alignright') ){
-      // do nothing
-    }
-    else if ( jQuery(this).parent('div').hasClass('aligncenter') ){
-      // do nothing
-    }
-    else {
-      jQuery(this).animate({
-        padding: ["+=2px", "swing"]
-        }, 200, function(){
-          // done!
-        });
-    }
+  jQuery('.page-content').children('p').children('a').children('img').each(function(){
+    jQuery(this).parent('a').addClass("img-container");
   });
-  jQuery('.entry-content a').mouseleave(function(){
-    if ( jQuery(this).hasClass('img-container') ){
-      // do nothing
-    }
-    else {
-      jQuery(this).animate({
-        padding: ["-=2px", "swing"]
-        }, 200, function(){
-          // done!
-        });
-    }
+  jQuery('.page-content').children('figure').children('a').children('img').each(function(){
+    jQuery(this).parent('a').addClass("img-container");
   });
 
+  // smooth scrolling for anchor links
+  // stolen from http://www.learningjquery.com/2007/10/improved-animated-scrolling-script-for-same-page-links/
+  $(document).ready(function() {
+    function filterPath(string) {
+    return string
+      .replace(/^\//,'')
+      .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+      .replace(/\/$/,'');
+    }
+    var locationPath = filterPath(location.pathname);
+    var scrollElem = scrollableElement('html', 'body');
+   
+    $('a[href*=#]').each(function() {
+      var thisPath = filterPath(this.pathname) || locationPath;
+      if (  locationPath == thisPath
+      && (location.hostname == this.hostname || !this.hostname)
+      && this.hash.replace(/#/,'') ) {
+        var $target = $(this.hash), target = this.hash;
+        if (target) {
+          var targetOffset = $target.offset().top;
+          $(this).click(function(event) {
+            event.preventDefault();
+            $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+              location.hash = target;
+            });
+          });
+        }
+      }
+    });
+   
+    // use the first element that is "scrollable"
+    function scrollableElement(els) {
+      for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+        var el = arguments[i],
+            $scrollElement = $(el);
+        if ($scrollElement.scrollTop()> 0) {
+          return el;
+        } else {
+          $scrollElement.scrollTop(1);
+          var isScrollable = $scrollElement.scrollTop()> 0;
+          $scrollElement.scrollTop(0);
+          if (isScrollable) {
+            return el;
+          }
+        }
+      }
+      return [];
+    }
+   
+  });
+
+  // blockquote cite tags subbed in for <del> tags
   jQuery('blockquote p del').each(function(){
     jQuery(this).parent('p').addClass("cite");
     jQuery(this).replaceWith(function(){
