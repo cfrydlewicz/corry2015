@@ -113,6 +113,9 @@ jQuery(document).ready( function() {
   jQuery('.entry-content').children('p').children('a').children('img').each(function(){
     jQuery(this).parent('a').addClass("img-container");
   });
+  jQuery('.entry-content').children('figure').children('a').children('img').each(function(){
+    jQuery(this).parent('a').addClass("img-container");
+  });
 
   jQuery('.entry-content a').mouseenter(function(){
     if ( jQuery(this).hasClass('img-container') ){
@@ -148,5 +151,11 @@ jQuery(document).ready( function() {
     }
   });
 
+  jQuery('blockquote p del').each(function(){
+    jQuery(this).parent('p').addClass("cite");
+    jQuery(this).replaceWith(function(){
+      return $("<cite />", {html: $(this).html()});
+    });
+  });
 
 });
