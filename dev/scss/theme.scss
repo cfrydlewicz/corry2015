@@ -722,6 +722,10 @@ section {
       font-size: 1.1rem;
       text-transform: none;
     }
+    a {
+      border: none;
+      padding: 0px;
+    }
   }
   .date, .categories {
     float: left;
@@ -843,18 +847,16 @@ section {
   }
 } /* .single */
 
-.text-container {
-  p, li {
-    .single & a,
-    .page & a {
-      border: 1px solid $linkcolor;
-      padding: .2rem;
-      white-space: nowrap;
-      &:hover {border-color: $hovercolor;}
-      &.img-container {
-        border: none;
-        padding: 0px;
-      }
+.entry-content {
+  p a,
+  li a {
+    border: 1px solid $linkcolor;
+    padding: .2rem;
+    white-space: nowrap;
+    &:hover {border-color: $hovercolor;}
+    &.img-container {
+      border: none;
+      padding: 0px;
     }
   }
   h2, h3 {
