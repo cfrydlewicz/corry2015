@@ -34,7 +34,7 @@
 
     <?php if ( has_post_thumbnail() ) {
       echo "<a href=\"".wp_get_attachment_url( get_post_thumbnail_id() )."\">";
-      the_post_thumbnail();
+      the_post_thumbnail('full');
       echo "</a>";
     } ?>
 
