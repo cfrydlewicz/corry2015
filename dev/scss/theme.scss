@@ -1256,6 +1256,7 @@ footer {
     outline: none;
     text-decoration: none;
     text-shadow: 0 0 1px rgba(242, 249, 255, 0.3);
+    .page-id-2638 .unpro &,
     .category-personal & {
       text-shadow: 0 0 1px rgba(111, 134, 134, 0.3);
       &:before {
@@ -1280,6 +1281,7 @@ footer {
         opacity: 1;
       }
     }
+    .page-id-2638 .pro &,
     .category-pro & {
       padding: 0px 0px 2px 0;
       &:after {
@@ -1410,7 +1412,6 @@ footer {
 /* Home page */
 .page-id-2638 {
   background-image: none;
-
   /* enable flex boxes */
   &,
   .total-wrapper,
@@ -1420,9 +1421,7 @@ footer {
   {
     height: 100%;
   }
-  
   header .bg-inner {display:none;}
-
   article {
     padding: 0px;
     .inner {width: 100%;}
