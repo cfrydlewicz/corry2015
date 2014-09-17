@@ -37,18 +37,9 @@ Icon
 .Trashes
 
 # Pre-Processors
-.sass-cache/
-dev/node_modules/
-dev/ref/
-dev/.sass-cache/
-dev/.sass-cache/14853855c369484f2529ecda4d74dd0748c8e68f/style.scssc
-dev/.sass-cache/14853855c369484f2529ecda4d74dd0748c8e68f/theme.scssc
-*.scssc
-images/bg-splash1040.jpg
-*.scssc
-*.scssc
-*.scssc
-/dev/corry2015/nbproject/private/
-dev/corry2015/nbproject/project.properties
-dev/corry2015/nbproject/project.xml
-dev/about-page.html
+/.sass-cache/
+/dev/.sass-cache/
+/dev/css/
+/dev/ref/
+/dev/corry2015/nbproject/
+/dev/about-page.html

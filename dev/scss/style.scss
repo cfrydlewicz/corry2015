@@ -233,7 +233,7 @@ table {
 
 blockquote {
   margin: 2rem 0px;
-  padding: .5rem 1rem .2rem .5rem;
+  padding: .5rem 1rem 1.2rem .5rem;
   quotes: "\201C""\201D""\2018""\2019";
   background-color: $light1;
   border-left: 10px solid $light2;
@@ -251,16 +251,13 @@ blockquote {
       color: $dark2;
     }
   }
-  &:after {
-    color: transparent;
-    content: close-quote;
-    font-size: 0px;
-    line-height: .1rem;
-  }
   p {
     display: block;
     margin-top: -1.5rem;
     margin-left: 36px;
+    &:nth-last-child(2):after {
+      content: close-quote;
+    }
     &:last-child {margin-bottom: 0px;}
     &.cite {
       font-size: .9rem;
@@ -395,16 +392,10 @@ header {
   font-weight: normal;
   margin-top: 10px;
   margin-left: 16px;
-  .category-personal & {
-    &:before {
-      content: ": unPro";
-    }
-  }
-  .category-pro & {
-    &:before {
-      content: ": Pro";
-    }
-  }
+  .category-personal &:before {content: ": unPro";}
+  .category-games &:before {content: ": gaming";}
+  .category-pro &:before {content: ": Pro";}
+  .page-id-640 &:before {content: ": about";}  /* About page */
 }
 
 .search-container {
@@ -508,66 +499,97 @@ header {
     max-width: 600px;
     background-color: #fff;
     border: 1px solid $grey;
+    cursor: default;
+  }
+  ul {
+    margin: 0px;
     ul {
-      margin: 0px;
-      li {
-        float: left;
-        clear: left;
-        box-sizing: border-box;
-        margin-bottom: 0px;
-        width: 50%;
-        min-height: 0px;
-        padding: 1.5rem;
-        background-image: url('images/bg-splash520a.jpg');
-        background-position: 100% 40%;
-        background-size: 160px auto;
-        background-color: $black;
-        color: $white;
-        &:nth-child(even){
-          background-image: url('images/bg-splash520b-flipped.jpg');
-          background-color: $white;
-          color: $black;
-        }
-        &:nth-child(odd) a {
-          color: $linkcolor-lite;
-          &:hover {color: $hovercolor;}
-        }
-        a {
-          display: block;
-          &:first-child {
-            font-weight: bold;
-            text-transform: uppercase;
-            padding-bottom: 1rem;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid $grey;
-          }
-        }
-        &:nth-child(even) {
-          clear: right;
-        }
+      padding: 0px;
+      border: none;
+    }
+  }
+  li {
+    float: left;
+    clear: left;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+    width: 50%;
+    min-height: 0px;
+    padding: 1.5rem;
+    background-image: url('images/bg-splash520a.jpg');
+    background-position: 100% 40%;
+    background-size: 160px auto;
+    background-color: $black;
+    color: $white;
+    &:nth-child(even){
+      background-image: url('images/bg-splash520b-flipped.jpg');
+      background-color: $white;
+      color: $black;
+    }
+    &.menu-item-2538 a {  /* Pro Category Menu */
+      color: $linkcolor-lite;
+      &:hover {color: $hovercolor;}
+    }
+    a {
+      display: block;
+      &:first-child {
+        font-weight: bold;
+        text-transform: uppercase;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid $grey;
       }
-      ul {
+    }
+    &:nth-child(even) {
+      clear: right;
+    }
+    li, li:nth-child(even) {
+      float: left;
+      clear: both;
+      width: 100%;
+      padding: 0px;
+      margin-left: 0px;
+      margin-bottom: 1rem;
+      background-color: transparent;
+      background-image: none;
+      a:first-child {
+        font-weight: normal;
+        text-transform: none;
+        margin-bottom: 0px;
         padding: 0px;
-        border: none;
-        li, li:nth-child(even) {
-          float: left;
-          clear: both;
-          width: 100%;
-          padding: 0px;
-          margin-left: 0px;
-          margin-bottom: 1rem;
-          background-color: transparent;
-          background-image: none;
-          a:first-child {
-            font-weight: normal;
-            text-transform: none;
-            margin-bottom: 0px;
-            padding: 0px;
-            border: 0px;
-          }
-          ul {display: none;}
-        }
-        li:last-child {margin-bottom: 0px;}
+        border: 0px;
+      }
+      ul {display: none;}
+    }
+    li:last-child {margin-bottom: 0px;}
+  }
+  .secondary-menu-container {
+    display: none;  /* during development only */
+    float: left;
+    clear: both;
+    width: 100%;
+    border-top: 1px solid $light3;
+    li {
+      background-color: $linkcolor;
+      background-image: none;
+      a {
+        color: $white;
+        &:hover {color: $light3;}
+      }
+    }
+    .all-posts {
+      float: left;
+      clear: both;
+      width: 100%;
+      border-top: 1px solid $light3;
+      background-color: $grey;
+      a {
+        font-size: 1.2rem;
+        line-height: normal;
+        color: $white;
+        text-align: center;
+        margin: 1rem auto;
+        &:hover {color: $hovercolor;}
       }
     }
   }
@@ -902,6 +924,7 @@ section {
   .entry-content {
     padding-bottom: 2rem;
     border-bottom: 1px solid $grey;
+    margin-top: 2rem;
     margin-bottom: .5rem;
   } /* .entry-content */
   .attachment-post-thumbnail {
@@ -1454,6 +1477,8 @@ footer {
   {
     height: 100%;
   }
+  
+  header .bg-inner {display:none;}
 
   article {
     padding: 0px;
@@ -1569,6 +1594,7 @@ footer {
 .page-id-640 {
   p, li {
     max-width: 600px;
+    &.copyright {max-width: none;}
   }
   #years {
     margin: 0px;
