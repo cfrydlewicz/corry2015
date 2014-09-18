@@ -40,6 +40,7 @@ Icon
 /.sass-cache/
 /dev/.sass-cache/
 /dev/css/
+/dev/node_modules/
 /dev/ref/
 /dev/corry2015/nbproject/
 /dev/about-page.html
