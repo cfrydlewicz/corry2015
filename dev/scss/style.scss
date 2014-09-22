@@ -532,13 +532,14 @@ header {
     }
     a {
       display: block;
-      &:first-child {
-        font-weight: bold;
-        text-transform: uppercase;
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid $grey;
-      }
+    }
+    a:first-child,
+    h4 {
+      font-weight: bold;
+      text-transform: uppercase;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid $grey;
     }
     &:nth-child(even) {
       clear: right;
@@ -564,14 +565,19 @@ header {
     li:last-child {margin-bottom: 0px;}
   }
   .secondary-menu-container {
-    display: none;  /* during development only */
+/*    display: none;  /* during development only */
     float: left;
     clear: both;
     width: 100%;
     border-top: 1px solid $light3;
+    background-color: $linkcolor;
     li {
-      background-color: $linkcolor;
+      background-color: transparent;
       background-image: none;
+      h4 {
+        color: $white;
+        margin-bottom: 1rem;
+      }
       a {
         color: $white;
         &:hover {color: $light3;}
@@ -581,9 +587,11 @@ header {
       float: left;
       clear: both;
       width: 100%;
-      border-top: 1px solid $light3;
+      border-top: 1px solid $linkcolor-lite;
       background-color: $grey;
+      margin-top: 1rem;
       a {
+        display: block;
         font-size: 1.2rem;
         line-height: normal;
         color: $white;

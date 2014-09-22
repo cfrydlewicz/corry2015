@@ -32,18 +32,18 @@
             <ul>
               <li><h4>Other Links</h4>
                 <ul>
+                  <li class="about"><a href="/">Home</a></li>
                 <?php if ( !is_page( 640 )  ) : // if not about page ?>
                   <li class="about"><a href="/about/">About Corry</a></li>
                 <?php else : // if IS about page ?>
                   <li class="contact"><a href="mailto:cfrydlewicz@gmail.com" target="_blank">Email Corry</a></li>
                   <li class="resume"><a href="mailto:cfrydlewicz@gmail.com?subject=Resume Request?body=Hello Corry,%0A%0AI would like a copy of your resume for the following position:%0A%0A(Please insert a job description or a link to one. I will reply as soon as possible.)" target="_blank">Request a Resume</a></li>
-                  <li class="skype"><a href="skype:cfrydlewicz?call" target="_blank">Skype Corry</a></li>
+                  <li class="skype"><a href="skype:cfrydlewicz?call" target="_blank">Skype</a></li>
                 <?php endif; // if not about page ?>
-
                 <?php if ( in_category('professional') ) : ?>
                   <li class="contact"><a href="mailto:cfrydlewicz@gmail.com" target="_blank">Email Corry</a></li>
                   <li class="resume"><a href="mailto:cfrydlewicz@gmail.com?subject=Resume Request?body=Hello Corry,%0A%0AI would like a copy of your resume for the following position:%0A%0A(Please insert a job description or a link to one. I will reply as soon as possible.)" target="_blank">Request a Resume</a></li>
-                  <li class="skype"><a href="skype:cfrydlewicz?call" target="_blank">Skype Corry</a></li>
+                  <li class="skype"><a href="skype:cfrydlewicz?call" target="_blank">Skype</a></li>
                 <?php endif; ?>
                 </ul>
               </li>
